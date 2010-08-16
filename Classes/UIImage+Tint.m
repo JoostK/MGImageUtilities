@@ -28,11 +28,11 @@
 			UIGraphicsBeginImageContextWithOptions([self size], NO, 0.0); // 0.0 for scale means "scale for device's main screen".
 		}
 		else
-#else
+#endif
 		{
 			UIGraphicsBeginImageContext([self size]);
 		}
-#endif
+
 		CGRect rect = CGRectZero;
 		rect.size = [self size];
 		

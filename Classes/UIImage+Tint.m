@@ -24,11 +24,12 @@
 		// Construct new image the same size as this one.
 		UIImage *image;
 #if __IPHONE_OS_VERSION_MAX_ALLOWED >= 40000
-		if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 4.0) {
+		if (UIGraphicsBeginImageContextWithOptions) {
 			UIGraphicsBeginImageContextWithOptions([self size], NO, 0.0); // 0.0 for scale means "scale for device's main screen".
 		}
+		else
 #else
-		if ([[[UIDevice currentDevice] systemVersion] floatValue] < 4.0) {
+		{
 			UIGraphicsBeginImageContext([self size]);
 		}
 #endif
